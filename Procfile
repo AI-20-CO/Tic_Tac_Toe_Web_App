@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run Tic_Tac_Toe_game.py
