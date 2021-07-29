@@ -51,7 +51,7 @@ if select_game_layout == 'Desktop Layout':
         border-radius:7px;
         font-size:45px;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-        position:relative;left:43%;
+        position:relative;left:32%;
     }
     div.stButton:hover> button:first-child  {
         background-position: left;
@@ -60,7 +60,7 @@ if select_game_layout == 'Desktop Layout':
         color: white;
         font-size:45px;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-        position:relative;left:43%;
+        position:relative;left:32%;
     }
     </style>""", unsafe_allow_html=True)
     # Initiating the states
@@ -238,7 +238,7 @@ elif select_game_layout == 'Phone Layout':
             border-radius:7px;
             font-size:20px;
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-            position:relative;left:43%;
+            position:relative;left:22%;
         }
         div.stButton:hover> button:first-child  {
             background-position: left;
@@ -247,7 +247,7 @@ elif select_game_layout == 'Phone Layout':
             color: white;
             font-size:20px;
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-            position:relative;left:43%;
+            position:relative;left:22%;
         }
         </style>""", unsafe_allow_html=True)
     # Initiating the states
