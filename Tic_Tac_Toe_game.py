@@ -12,7 +12,7 @@ hostname = socket.gethostname()
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
-            #MainMenu {visibility: visible;}
+            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             footer {
                 visibility: hidden;
