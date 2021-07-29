@@ -1,5 +1,4 @@
 import streamlit as st
-import socket
 
 st.set_page_config('Tic Tac Toe','Tic_logo.png',initial_sidebar_state='collapsed')
 # max top padding
@@ -23,6 +22,7 @@ hide_streamlit_style = st.markdown("""
                 visibility: visible;
                 display: block;
                 position: relative;
+                color:grey;
             }
             </style>
             """, unsafe_allow_html=True)
@@ -38,8 +38,8 @@ tictactoe_style = st.markdown('''<div
 st.text('')
 st.text('')
 st.text('')
-
-if 'DESKTOP' in hostname or 'LAPTOP' in hostname or 'MAC' in hostname or 'Mac' in hostname or 'Macbook' in hostname:
+select_game_layout = st.sidebar.selectbox('',['Desktop Layout','Phone Layout'])
+if select_game_layout == 'Desktop Layout':
     # button Design For pc Layout
     Button_Design_pc = st.markdown("""
     <style>
@@ -225,7 +225,7 @@ if 'DESKTOP' in hostname or 'LAPTOP' in hostname or 'MAC' in hostname or 'Mac' i
         </h2> 
         </div> ''',unsafe_allow_html=True)
 
-else:
+elif select_game_layout == 'Phone Layout':
     # button Design For pc Layout
     Button_Design_Phone = st.markdown("""
         <style>
