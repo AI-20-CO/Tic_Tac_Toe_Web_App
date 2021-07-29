@@ -8,7 +8,6 @@ top_padding_style = st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-hostname = socket.gethostname()
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
