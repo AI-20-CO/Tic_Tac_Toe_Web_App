@@ -2,7 +2,7 @@
 Tic Tac Toe is a web app made in python with the use of streamlit module that allows 2 player gameplay.
   
 ## Web App Link
-Link: [TIC TAC TOE](https://tic-tac-toe-t3.herokuapp.com/)
+Link: [✖️TIC TAC TOE⭕](https://tic-tac-toe-t3.herokuapp.com/)
 
 ## Installation And Usage
 1. Installation
