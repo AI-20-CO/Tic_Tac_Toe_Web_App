@@ -1,6 +1,7 @@
 import streamlit as st
 
 st.set_page_config('Tic Tac Toe','Tic_logo.png',initial_sidebar_state='collapsed')
+
 # max top padding
 top_padding_style = st.markdown("""
 <style>
@@ -12,7 +13,7 @@ top_padding_style = st.markdown("""
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
-            #MainMenu {visibility: hidden;}
+            #MainMenu {visibility: visible;}
             footer {visibility: hidden;}
             footer {
                 visibility: hidden;
@@ -39,6 +40,7 @@ st.text('')
 st.text('')
 st.text('')
 select_game_layout = st.sidebar.selectbox('',['Desktop Layout','Phone Layout'])
+
 if select_game_layout == 'Desktop Layout':
     # button Design For pc Layout
     Button_Design_pc = st.markdown("""
@@ -186,7 +188,6 @@ if select_game_layout == 'Desktop Layout':
         st.session_state.game_over = ''
 
     b1, b2, b3 = st.beta_columns(3)
-
     one = b1.button(st.session_state.one, key='1', on_click=non)
     two = b2.button(st.session_state.two, key='2', on_click=ntwo)
     three = b3.button(st.session_state.three, key='3', on_click=nthree)
