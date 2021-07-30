@@ -8,10 +8,11 @@ top_padding_style = st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
-            #MainMenu {visibility: hidden;}
+            #MainMenu {visibility: visible;}
             footer {visibility: hidden;}
             footer {
                 visibility: hidden;
@@ -21,7 +22,7 @@ hide_streamlit_style = st.markdown("""
                 visibility: visible;
                 display: block;
                 position: relative;
-                color:grey;
+                color: grey;
             }
             </style>
             """, unsafe_allow_html=True)
@@ -29,9 +30,9 @@ hide_streamlit_style = st.markdown("""
 # Tic Tac Toe style Text
 tictactoe_style = st.markdown('''<div
      style="background-image: linear-gradient(to left,#36363D,black, #36363D);padding:10px;border-radius:25px">
-    <h2 
-    style="color:grey;text-align:center;font-size:20px"> TIK TAC TOE 
-    </h2> 
+    <h2
+    style="color:grey;text-align:center;font-size:20px"> TIK TAC TOE
+    </h2>
     </div> ''', unsafe_allow_html=True)
 
 st.text('')
@@ -43,8 +44,8 @@ if select_game_layout == 'Desktop Layout':
     Button_Design_pc = st.markdown("""
     <style>
     div.stButton> button:first-child{
-        color:  black;
-        background: #000000
+        color:  white;
+        background: black;
         border-color:black;
         background-size: 500%;
         transition: 0.3s ;
@@ -63,9 +64,10 @@ if select_game_layout == 'Desktop Layout':
         position:relative;left:32%;
     }
     </style>""", unsafe_allow_html=True)
+
     # Initiating the states
     if '1' not in st.session_state:
-        st.session_state.cache = '✖️'
+        st.session_state.turn = '✖️'
         st.session_state.one = '➖'
         st.session_state.two = '➖'
         st.session_state.three = '➖'
@@ -77,91 +79,101 @@ if select_game_layout == 'Desktop Layout':
         st.session_state.nine = '➖'
         st.session_state.scorex = 0
         st.session_state.scoreo = 0
+        st.session_state.game_over = ''
 
 
     def non():
-        if st.session_state.one == '➖':
-            st.session_state.one = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.one == '➖':
+                st.session_state.one = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def ntwo():
-        if st.session_state.two == '➖':
-            st.session_state.two = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.two == '➖':
+                st.session_state.two = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nthree():
-        if st.session_state.three == '➖':
-            st.session_state.three = st.session_state.cache
+        if st.session_state.game_over == '':
+            if st.session_state.three == '➖':
+                st.session_state.three = st.session_state.turn
 
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nfour():
-        if st.session_state.four == '➖':
-            st.session_state.four = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.four == '➖':
+                st.session_state.four = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nfive():
-        if st.session_state.five == '➖':
-            st.session_state.five = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.five == '➖':
+                st.session_state.five = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nsix():
-        if st.session_state.six == '➖':
-            st.session_state.six = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.six == '➖':
+                st.session_state.six = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nseven():
-        if st.session_state.seven == '➖':
-            st.session_state.seven = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.seven == '➖':
+                st.session_state.seven = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def neight():
-        if st.session_state.eight == '➖':
-            st.session_state.eight = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.eight == '➖':
+                st.session_state.eight = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nnine():
-        if st.session_state.nine == '➖':
-            st.session_state.nine = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.nine == '➖':
+                st.session_state.nine = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
     def restart():
-        st.session_state.cache = '✖️'
+        st.session_state.turn = '✖️'
         st.session_state.one = '➖'
         st.session_state.two = '➖'
         st.session_state.three = '➖'
@@ -171,6 +183,7 @@ if select_game_layout == 'Desktop Layout':
         st.session_state.seven = '➖'
         st.session_state.eight = '➖'
         st.session_state.nine = '➖'
+        st.session_state.game_over = ''
 
     b1, b2, b3 = st.beta_columns(3)
 
@@ -192,36 +205,41 @@ if select_game_layout == 'Desktop Layout':
             or st.session_state.one == st.session_state.four == st.session_state.seven == '✖️' or st.session_state.one == st.session_state.four == st.session_state.nine == '⭕' \
             or st.session_state.two == st.session_state.five == st.session_state.eight == '✖️' or st.session_state.two == st.session_state.five == st.session_state.eight == '⭕' \
             or st.session_state.three == st.session_state.six == st.session_state.nine == '✖️' or st.session_state.three == st.session_state.six == st.session_state.nine == '⭕':
-        if st.session_state.cache == '✖️':
-            st.session_state.cache = '⭕'
-            st.session_state.scoreo+=1
-        else:
-            st.session_state.cache = '✖️'
-            st.session_state.scorex+=1
+        if st.session_state.game_over == '':
+            if st.session_state.turn == '✖️':
+                st.session_state.turn = '⭕'
+                st.session_state.scoreo+=1
+            else:
+                st.session_state.turn = '✖️'
+                st.session_state.scorex+=1
+        st.session_state.game_over = True
         st.markdown(f'''<div
         style="background-color:black;padding:10px;border-radius:9px">
-        <h2 
-        style="color:grey;text-align:center;font-size:20px">Winner is {st.session_state.cache}
-        </h2> 
+        <h2
+        style="color:grey;text-align:center;font-size:20px">Winner is {st.session_state.turn}
+        </h2>
         </div> ''',unsafe_allow_html=True)
         st.balloons()
-        restart()
+        l1,l2,l3 = st.beta_columns([1,3,1])
+        restart_button = l2.button('Restart',on_click=restart,key='10')
 
     if st.session_state.one != '➖' and st.session_state.two != '➖' and st.session_state.three != '➖' and st.session_state.four != '➖' \
-            and st.session_state.five != '➖' and st.session_state.six != '➖' and st.session_state.seven != '➖' and st.session_state.eight != '➖' and st.session_state.nine != '➖':
-        restart()
+            and st.session_state.five != '➖' and st.session_state.six != '➖' and st.session_state.seven != '➖' and st.session_state.eight != '➖' and st.session_state.nine != '➖' and st.session_state.game_over!=True:
+        st.session_state.game_over = True
+        l1, l2, l3 = st.beta_columns([1, 3, 1])
+        restart_button = l2.button('Restart',on_click=restart,key='11')
         st.markdown(f'''<div
             style="background-color:black;padding:10px;border-radius:9px">
-            <h2 
+            <h2
             style="color:grey;text-align:center;font-size:20px">Its a Tie !!!
-            </h2> 
+            </h2>
             </div> ''', unsafe_allow_html=True)
 
     st.markdown(f'''<div
         style="background-color:black;padding:10px;border-radius:9px">
-        <h2 
+        <h2
         style="color:grey;text-align:left;font-size:20px">Player ✖️- {str(st.session_state.scorex)} ━━━━━━━━━━━━━━━━━━━━━ Player ⭕ - {str(st.session_state.scoreo)}
-        </h2> 
+        </h2>
         </div> ''',unsafe_allow_html=True)
 
 elif select_game_layout == 'Phone Layout':
@@ -230,13 +248,13 @@ elif select_game_layout == 'Phone Layout':
         <style>
         div.stButton> button:first-child{
 
-            color:  #1BA7B5;
+            color:  white;
             background: black;
             border-color:black;
             background-size: 500%;
             transition: 0.3s ;
             border-radius:7px;
-            font-size:20px;
+            font-size:25px;
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
             position:relative;left:22%;
         }
@@ -245,14 +263,14 @@ elif select_game_layout == 'Phone Layout':
             border-radius:40px;
             border-color:white;
             color: white;
-            font-size:20px;
+            font-size:25px;
             font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
             position:relative;left:22%;
         }
         </style>""", unsafe_allow_html=True)
     # Initiating the states
     if '1' not in st.session_state:
-        st.session_state.cache = '✖️'
+        st.session_state.turn = '✖️'
         st.session_state.one = '➖'
         st.session_state.two = '➖'
         st.session_state.three = '➖'
@@ -264,92 +282,102 @@ elif select_game_layout == 'Phone Layout':
         st.session_state.nine = '➖'
         st.session_state.scorex = 0
         st.session_state.scoreo = 0
+        st.session_state.game_over = ''
 
 
     def non():
-        if st.session_state.one == '➖':
-            st.session_state.one = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.one == '➖':
+                st.session_state.one = st.session_state.turn
+                if st.session_state.cache == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def ntwo():
-        if st.session_state.two == '➖':
-            st.session_state.two = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.two == '➖':
+                st.session_state.two = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nthree():
-        if st.session_state.three == '➖':
-            st.session_state.three = st.session_state.cache
+        if st.session_state.game_over == '':
+            if st.session_state.three == '➖':
+                st.session_state.three = st.session_state.turn
 
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nfour():
-        if st.session_state.four == '➖':
-            st.session_state.four = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.four == '➖':
+                st.session_state.four = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nfive():
-        if st.session_state.five == '➖':
-            st.session_state.five = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.five == '➖':
+                st.session_state.five = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nsix():
-        if st.session_state.six == '➖':
-            st.session_state.six = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.six == '➖':
+                st.session_state.six = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nseven():
-        if st.session_state.seven == '➖':
-            st.session_state.seven = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.seven == '➖':
+                st.session_state.seven = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def neight():
-        if st.session_state.eight == '➖':
-            st.session_state.eight = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.eight == '➖':
+                st.session_state.eight = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def nnine():
-        if st.session_state.nine == '➖':
-            st.session_state.nine = st.session_state.cache
-            if st.session_state.cache == '✖️':
-                st.session_state.cache = '⭕'
-            else:
-                st.session_state.cache = '✖️'
+        if st.session_state.game_over == '':
+            if st.session_state.nine == '➖':
+                st.session_state.nine = st.session_state.turn
+                if st.session_state.turn == '✖️':
+                    st.session_state.turn = '⭕'
+                else:
+                    st.session_state.turn = '✖️'
 
 
     def restart():
-        st.session_state.cache = '✖️'
+        st.session_state.turn = '✖️'
         st.session_state.one = '➖'
         st.session_state.two = '➖'
         st.session_state.three = '➖'
@@ -359,13 +387,9 @@ elif select_game_layout == 'Phone Layout':
         st.session_state.seven = '➖'
         st.session_state.eight = '➖'
         st.session_state.nine = '➖'
+        st.session_state.game_over = ''
 
-
-    b1, b2, b3 ,b4,b5,b6,b7,b8,b9= st.beta_columns(9)
-    # about_info1 = '''<div
-    #     style="background-image: linear-gradient(to left,black, #1BA7B5);padding:2px;border-radius:9px">
-    #     </div> '''
-
+    b1, b2, b3, b4, b5, b6, b7, b8, b9 = st.beta_columns(9)
 
     one = b1.button(st.session_state.one, key='1', on_click=non)
     two = b2.button(st.session_state.two, key='2', on_click=ntwo)
@@ -385,35 +409,38 @@ elif select_game_layout == 'Phone Layout':
             or st.session_state.one == st.session_state.four == st.session_state.seven == '✖️' or st.session_state.one == st.session_state.four == st.session_state.nine == '⭕' \
             or st.session_state.two == st.session_state.five == st.session_state.eight == '✖️' or st.session_state.two == st.session_state.five == st.session_state.eight == '⭕' \
             or st.session_state.three == st.session_state.six == st.session_state.nine == '✖️' or st.session_state.three == st.session_state.six == st.session_state.nine == '⭕':
-        if st.session_state.cache == '✖️':
-            st.session_state.cache = '⭕'
-            st.session_state.scoreo += 1
-        else:
-            st.session_state.cache = '✖️'
-            st.session_state.scorex += 1
+        if st.session_state.game_over == '':
+            if st.session_state.turn == '✖️':
+                st.session_state.turn = '⭕'
+                st.session_state.scoreo += 1
+            else:
+                st.session_state.cache = '✖️'
+                st.session_state.scorex += 1
+        st.session_state.game_over = True
         st.markdown(f'''<div
             style="background-color:black;padding:10px;border-radius:9px">
-            <h2 
-            style="color:grey;text-align:left;font-size:20px">Winner is {st.session_state.cache}
-            </h2> 
+            <h2
+            style="color:grey;text-align:left;font-size:20px">Winner is {st.session_state.turn}
+            </h2>
             </div> ''', unsafe_allow_html=True)
         st.balloons()
-        restart()
+        restart_button = st.button('🆑 Restart 🆑',on_click=restart)
 
     if st.session_state.one != '➖' and st.session_state.two != '➖' and st.session_state.three != '➖' and st.session_state.four != '➖' \
-            and st.session_state.five != '➖' and st.session_state.six != '➖' and st.session_state.seven != '➖' and st.session_state.eight != '➖' and st.session_state.nine != '➖':
-        restart()
+            and st.session_state.five != '➖' and st.session_state.six != '➖' and st.session_state.seven != '➖' and st.session_state.eight != '➖' and st.session_state.nine != '➖' and st.session_state.game_over!=True:
+        st.session_state.game_over = True
+        l1,l2,l3 = st.beta_columns([1,3,1])
+        restart_button = l1.button('Restart',on_click=restart)
         st.markdown(f'''<div
                 style="background-color:#36363D;padding:10px;border-radius:9px">
-                <h2 
+                <h2
                 style="color:black;text-align:left;font-size:20px">Its a Tie !!!
-                </h2> 
+                </h2>
                 </div> ''', unsafe_allow_html=True)
 
     st.markdown(f'''<div
             style="background-color:black;padding:10px;border-radius:9px">
-            <h2 
+            <h2
             style="color:grey;text-align:left;font-size:20px">Player ✖️- {str(st.session_state.scorex)}  ━━━  Player ⭕ - {str(st.session_state.scoreo)}
-            </h2> 
+            </h2>
             </div> ''', unsafe_allow_html=True)
-
