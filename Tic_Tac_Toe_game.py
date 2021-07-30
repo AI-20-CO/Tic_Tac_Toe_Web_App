@@ -12,7 +12,7 @@ top_padding_style = st.markdown("""
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
-            #MainMenu {visibility: hidden;}
+            #MainMenu {visibility: visible;}
             footer {visibility: hidden;}
             footer {
                 visibility: hidden;
@@ -197,14 +197,10 @@ if select_game_layout == 'Desktop Layout':
     eight = b2.button(st.session_state.eight, key='8', on_click=neight)
     nine = b3.button(st.session_state.nine, key='9', on_click=nnine)
 
-    if st.session_state.one == st.session_state.two == st.session_state.three == '✖️' or st.session_state.one == st.session_state.two == st.session_state.three == '⭕' \
-            or st.session_state.four == st.session_state.five == st.session_state.six == '✖️' or st.session_state.four == st.session_state.five == st.session_state.six == '⭕' \
-            or st.session_state.seven == st.session_state.eight == st.session_state.nine == '✖️' or st.session_state.seven == st.session_state.eight == st.session_state.nine == '⭕' \
-            or st.session_state.one == st.session_state.five == st.session_state.nine == '✖️' or st.session_state.one == st.session_state.five == st.session_state.nine == '⭕' \
-            or st.session_state.three == st.session_state.five == st.session_state.seven == '✖️' or st.session_state.three == st.session_state.five == st.session_state.seven == '⭕' \
-            or st.session_state.one == st.session_state.four == st.session_state.seven == '✖️' or st.session_state.one == st.session_state.four == st.session_state.nine == '⭕' \
-            or st.session_state.two == st.session_state.five == st.session_state.eight == '✖️' or st.session_state.two == st.session_state.five == st.session_state.eight == '⭕' \
-            or st.session_state.three == st.session_state.six == st.session_state.nine == '✖️' or st.session_state.three == st.session_state.six == st.session_state.nine == '⭕':
+    if st.session_state.one == st.session_state.two == st.session_state.three != '➖' or st.session_state.four == st.session_state.five == st.session_state.six != '➖'\
+            or st.session_state.seven == st.session_state.eight == st.session_state.nine != '➖' or st.session_state.one == st.session_state.five == st.session_state.nine != '➖'\
+            or st.session_state.three == st.session_state.five == st.session_state.seven != '➖' or st.session_state.one == st.session_state.four == st.session_state.seven != '➖'\
+            or st.session_state.two == st.session_state.five == st.session_state.eight != '➖' or st.session_state.three == st.session_state.six == st.session_state.nine != '➖':
         if st.session_state.game_over == '':
             if st.session_state.turn == '✖️':
                 st.session_state.turn = '⭕'
@@ -400,14 +396,10 @@ elif select_game_layout == 'Phone Layout':
     eight = b2.button(st.session_state.eight, key='8', on_click=neight)
     nine = b3.button(st.session_state.nine, key='9', on_click=nnine)
 
-    if st.session_state.one == st.session_state.two == st.session_state.three == '✖️' or st.session_state.one == st.session_state.two == st.session_state.three == '⭕' \
-            or st.session_state.four == st.session_state.five == st.session_state.six == '✖️' or st.session_state.four == st.session_state.five == st.session_state.six == '⭕' \
-            or st.session_state.seven == st.session_state.eight == st.session_state.nine == '✖️' or st.session_state.seven == st.session_state.eight == st.session_state.nine == '⭕' \
-            or st.session_state.one == st.session_state.five == st.session_state.nine == '✖️' or st.session_state.one == st.session_state.five == st.session_state.nine == '⭕' \
-            or st.session_state.three == st.session_state.five == st.session_state.seven == '✖️' or st.session_state.three == st.session_state.five == st.session_state.seven == '⭕' \
-            or st.session_state.one == st.session_state.four == st.session_state.seven == '✖️' or st.session_state.one == st.session_state.four == st.session_state.nine == '⭕' \
-            or st.session_state.two == st.session_state.five == st.session_state.eight == '✖️' or st.session_state.two == st.session_state.five == st.session_state.eight == '⭕' \
-            or st.session_state.three == st.session_state.six == st.session_state.nine == '✖️' or st.session_state.three == st.session_state.six == st.session_state.nine == '⭕':
+    if st.session_state.one == st.session_state.two == st.session_state.three != '➖' or st.session_state.four == st.session_state.five == st.session_state.six != '➖' \
+            or st.session_state.seven == st.session_state.eight == st.session_state.nine != '➖' or st.session_state.one == st.session_state.five == st.session_state.nine != '➖' \
+            or st.session_state.three == st.session_state.five == st.session_state.seven != '➖' or st.session_state.one == st.session_state.four == st.session_state.seven != '➖' \
+            or st.session_state.two == st.session_state.five == st.session_state.eight != '➖' or st.session_state.three == st.session_state.six == st.session_state.nine != '➖':
         if st.session_state.game_over == '':
             if st.session_state.turn == '✖️':
                 st.session_state.turn = '⭕'
