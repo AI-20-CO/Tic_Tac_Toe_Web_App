@@ -12,7 +12,7 @@ top_padding_style = st.markdown("""
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
-            #MainMenu {visibility: visible;}
+            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             footer {
                 visibility: hidden;
@@ -225,7 +225,6 @@ if select_game_layout == 'Desktop Layout':
 
     if st.session_state.one != '➖' and st.session_state.two != '➖' and st.session_state.three != '➖' and st.session_state.four != '➖' \
             and st.session_state.five != '➖' and st.session_state.six != '➖' and st.session_state.seven != '➖' and st.session_state.eight != '➖' and st.session_state.nine != '➖' and st.session_state.game_over!=True:
-        st.session_state.game_over = True
         l1, l2, l3 = st.beta_columns([1, 3, 1])
         restart_button = l2.button('Restart',on_click=restart,key='11')
         st.markdown(f'''<div
@@ -428,15 +427,14 @@ elif select_game_layout == 'Phone Layout':
 
     if st.session_state.one != '➖' and st.session_state.two != '➖' and st.session_state.three != '➖' and st.session_state.four != '➖' \
             and st.session_state.five != '➖' and st.session_state.six != '➖' and st.session_state.seven != '➖' and st.session_state.eight != '➖' and st.session_state.nine != '➖' and st.session_state.game_over!=True:
-        st.session_state.game_over = True
         l1,l2,l3 = st.beta_columns([1,3,1])
         restart_button = l1.button('Restart',on_click=restart)
         st.markdown(f'''<div
-                style="background-color:#36363D;padding:10px;border-radius:9px">
-                <h2
-                style="color:black;text-align:left;font-size:20px">Its a Tie !!!
-                </h2>
-                </div> ''', unsafe_allow_html=True)
+                    style="background-color:black;padding:10px;border-radius:9px">
+                    <h2
+                    style="color:grey;text-align:center;font-size:20px">Its a Tie !!!
+                    </h2>
+                    </div> ''', unsafe_allow_html=True)
 
     st.markdown(f'''<div
             style="background-color:black;padding:10px;border-radius:9px">
