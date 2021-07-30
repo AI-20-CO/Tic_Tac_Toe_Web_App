@@ -289,7 +289,7 @@ elif select_game_layout == 'Phone Layout':
         if st.session_state.game_over == '':
             if st.session_state.one == '➖':
                 st.session_state.one = st.session_state.turn
-                if st.session_state.cache == '✖️':
+                if st.session_state.turn == '✖️':
                     st.session_state.turn = '⭕'
                 else:
                     st.session_state.turn = '✖️'
@@ -414,7 +414,7 @@ elif select_game_layout == 'Phone Layout':
                 st.session_state.turn = '⭕'
                 st.session_state.scoreo += 1
             else:
-                st.session_state.cache = '✖️'
+                st.session_state.turn = '✖️'
                 st.session_state.scorex += 1
         st.session_state.game_over = True
         st.markdown(f'''<div
