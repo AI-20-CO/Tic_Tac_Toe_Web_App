@@ -50,7 +50,7 @@ if select_game_layout == 'Desktop Layout':
         background-size: 500%;
         transition: 0.3s ;
         border-radius:7px;
-        font-size:45px;
+        font-size:40px;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
         position:relative;left:32%;
     }
@@ -59,7 +59,7 @@ if select_game_layout == 'Desktop Layout':
         border-radius:40px;
         border-color:white;
         color: white;
-        font-size:45px;
+        font-size:40px;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
         position:relative;left:32%;
     }
