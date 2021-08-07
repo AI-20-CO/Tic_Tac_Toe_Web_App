@@ -13,7 +13,7 @@ top_padding_style = st.markdown("""
 # Hide Streamlit Promotions
 hide_streamlit_style = st.markdown("""
             <style>
-            #MainMenu {visibility: visible;}
+            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             footer {
                 visibility: hidden;
